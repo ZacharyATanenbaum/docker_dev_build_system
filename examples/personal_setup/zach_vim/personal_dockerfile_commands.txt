@@ -1,0 +1,17 @@
+# Setup Packages
+RUN apt update
+RUN apt install --yes ctags git tmux vim
+RUN yes | pip install pylint
+
+# Copy Setup Script to docker continer
+COPY ./.bin/setup_image.sh /opt/setup_image.sh
+
+# Setup user named "dev"
+RUN useradd -ms /bin/bash dev
+USER dev
+
+# Setup Vundle
+RUN git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# Start the container by running needed setup within the container
+CMD ["/opt/setup_image.sh"]

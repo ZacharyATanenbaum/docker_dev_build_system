@@ -1,0 +1,18 @@
+stdin_open: true
+tty: true
+ports:
+  - "5000:5000"
+links:
+  - redis_db
+# Used to setup git
+environment:
+  - GIT_USER_EMAIL
+  - GIT_USER_NAME
+  - HOST_GROUP_ID
+  - HOST_USER_ID
+volumes:
+  - /home/zach/code/cd_ci_example/.:/app
+  - /home/zach/.bashrc:/home/dev/.bashrc
+  - /home/zach/.vimrc:/home/dev/.vimrc
+  - /home/zach/.ssh:/home/dev/.ssh/
+

@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  python_docker:
+    build: ./python_docker/
+    ports:
+      - 5000:5000
+    links:
+      - redis_db
+  redis_db:
+    image: redis
+    ports:
+       - 6379
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+       - ./redis-data:/data
