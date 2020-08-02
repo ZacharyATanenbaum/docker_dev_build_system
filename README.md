@@ -1,5 +1,5 @@
 
-## Docker Developer Build System
+## [Docker Developer Build System](https://pypi.org/project/ddbs)
 
 This system is used to inject a developer environment into a
 docker compose system.
@@ -20,7 +20,7 @@ This library requires the following dependencies...
 
 To install run the following command either in your global python environment or a virtual environment.
 ```
-python3 -m pip3 install docker_dev
+python3 -m pip3 install ddbs
 ```
 
 
@@ -76,9 +76,9 @@ Thus, if one needs to have file available at Dockerfile creation time they can b
 #### Command
 
 Use the following command to run the service.
-If one installed the `docker_dev` within a virtual environment they must start that virtual environment before running the following command.
+If one installed the `ddbs` within a virtual environment they must start that virtual environment before running the following command.
 ```
-python3 -m docker_dev -s $SERVICE_NAME -p $PERSONAL_DEV_ENIVRONMENT_BASE_PATH
+python3 -m ddbs -s $SERVICE_NAME -p $PERSONAL_DEV_ENIVRONMENT_BASE_PATH
 ```
 
 #### Required Arguments

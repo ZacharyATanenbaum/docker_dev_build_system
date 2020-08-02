@@ -22,7 +22,7 @@ This data is persisted in a Redis database, or `redis`, and that data should be 
 - Docker
 - Docker-Compose
 - Python
-- [docker\_dev (This Repo...)](https://github.com/ZacharyATanenbaum/docker_dev_build_system)
+- [ddbs(docker dev build system) (This Repo...)](https://github.com/ZacharyATanenbaum/docker_dev_build_system)
 
 
 ---
@@ -44,7 +44,7 @@ Sudo is needed to run [the proper docker-compose commands in this file (../perso
 Which is what automatically starts docker-compose.
 
 Once `start_development.sh` is run it will:
-- Trigger this lovely `docker_dev` package.
+- Trigger this lovely `ddbs (Docker Dev build System)` package.
 - Stop all running servies with the same names as those dictated in the `docker-compose.yml`.
 - Build all of the services located in the `docker-compose.yml` file with `python_docker` in development mode.
 - Start a `tmux` session in a "development" container for the `python_docker` service.

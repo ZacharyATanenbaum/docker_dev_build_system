@@ -8,7 +8,7 @@ with open('README.md', 'r') as fh:
 
 
 setuptools.setup(
-    name='docker_dev',
+    name='ddbs',
     version='0.0.1',
     author='Zachary A. Tanenbaum',
     author_email='ZachTanenbaum+docker_dev_build_system@gmail.com',
@@ -26,7 +26,7 @@ setuptools.setup(
     python_requires='>=3.6',
     entry_points={
         'console_scripts': [
-            'docker_dev = docker_dev.__main__:main',
+            'docker_dev_build_system = docker_dev.__main__:main',
         ]
     },
 )
