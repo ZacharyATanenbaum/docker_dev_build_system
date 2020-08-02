@@ -31,21 +31,7 @@ This data is persisted in a Redis database, or `redis`, and that data should be 
 #### Production
 
 To run the system in production is a pretty straightforward and regular `docker-compose` program.
-All of the following commands must be run in the base directory of this example.
-I.e. The directory with the `docker-compose.yml` and  this `README.md` file.
-```
-# Start Docker Compose in the foreground
-sudo docker-compose up
-
-# Close Docker Compose that's running in the foreground
-ctrl-c
-
-# Start Docker Compose in the background
-sudo docker-compose up --detach
-
-# Stop Docker Compose in the background
-sudo docker-compose down
-```
+To make it easier (as the containers will conflict with the "development" containers there's a script `run_production.sh` that will make sure to re-build everything prior to running production.
 
 #### Development
 
@@ -78,3 +64,15 @@ A quick overview is as follows:
 - Pylint
 - Vundle (setup with the current user's vimrc)
 - Vundle Plugins (again depending on the current user's vimrc)
+
+
+---
+### Troubleshooting / FAQ
+
+#### Why does it build so slow?
+
+The [../personal\_setup/zach\_vim/personal\_run\_commands.sh](../personal_setup/zach_vim/personal_run_commands.sh) has `--no-cache` under the build section.
+This allows all changes to the setup scripts/personal setup to immediately reflect on the actual running image.
+This also allows all changes to the Dockerfile.development to be picked up.
+Thus, the 1x occurance of 30s (less than a lot of compile times!) build time is worth it.
+Please feel free to remove `--no-cache` if you'd like and aren't going to be modifying the "personal setup".
