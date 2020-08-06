@@ -5,4 +5,8 @@
 # and detached `run_prod_dockerfile.sh`
 #
 
-sudo docker stop python_docker_example_name
+echo "Stopping Docker Container Named 'python_docker_example_container'"
+sudo docker stop python_docker_example_container
+
+echo "Removing  Docker Container Named 'python_docker_example_container'"
+sudo docker rm python_docker_example_container
