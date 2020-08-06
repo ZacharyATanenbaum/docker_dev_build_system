@@ -10,6 +10,6 @@ sudo docker build --tag python_docker_example .
 
 echo "Running Image 'python_docker_example' with name 'python_docker_example_container'"
 sudo docker run \
-    --publish 8000:8080 \
+    --publish 5000:5000 \
     --name python_docker_example_container \
     python_docker_example
