@@ -119,6 +119,15 @@ def create_development_docker_compose(
         'dockerfile': service_dev_dockerfile_filename
     }
 
+    git_folder_root_directory = str(subprocess.check_output(
+        ['git', 'rev-parse', '--show-toplevel']
+    ))
+
+    if 'volumes' not in docker_compose['services'][service_name]:
+        docker_compose['services'][service_name]['volumes']
+
+    docker_compose['services'][service_name]['volumes'] += [f'./{git_folder_root_directory}:/app/']
+
     with open(dev_docker_compose_filename, 'w') as dev_docker_compose:
         LOG.debug('Writing Dev Docker Compose:\n{}', docker_compose)
         yaml.dump(docker_compose, dev_docker_compose)
@@ -220,7 +229,7 @@ def get_personal_config(absolute_config_path):
 
 def merge_dicts(target_dict, source_dict):
     """
-    Merge the top layer of the source dict onto the target dict.
+    Merge the top layer of the source dict onto the target dict in place.
     target_dict::{} Dictionary to populate
     source_dict::{} Dictionary to take values from
     return::{} Combined dictionary

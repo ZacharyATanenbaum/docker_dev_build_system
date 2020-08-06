@@ -31,6 +31,7 @@ The project to have a development environment injected must have the following:
 2. Dockerfile (For the service to run in development mode)
 3. Dockerfile.development (For the service to run in development mode)
   - This file will be all the commands to setup the service in a development mode.
+  - You __DO NOT__ need to dictate the code path. The whole project will be added to the `/app` directory within the container.
 
 
 ### Personal Prerequisites
