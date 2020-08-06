@@ -119,14 +119,14 @@ def create_development_docker_compose(
         'dockerfile': service_dev_dockerfile_filename
     }
 
-    git_folder_root_directory = str(subprocess.check_output(
+    git_folder_root_directory = subprocess.check_output(
         ['git', 'rev-parse', '--show-toplevel']
-    ))
+        ).decode('utf-8').strip()
 
     if 'volumes' not in docker_compose['services'][service_name]:
         docker_compose['services'][service_name]['volumes']
 
-    docker_compose['services'][service_name]['volumes'] += [f'./{git_folder_root_directory}:/app/']
+    docker_compose['services'][service_name]['volumes'] += [f'{git_folder_root_directory}:/app/']
 
     with open(dev_docker_compose_filename, 'w') as dev_docker_compose:
         LOG.debug('Writing Dev Docker Compose:\n{}', docker_compose)

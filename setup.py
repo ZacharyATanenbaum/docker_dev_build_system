@@ -9,7 +9,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='ddbs',
-    version='0.0.5',
+    version='0.0.6',
     author='Zachary A. Tanenbaum',
     author_email='ZachTanenbaum+docker_dev_build_system@gmail.com',
     description='A package for injecting a development env into a docker compose project.',
