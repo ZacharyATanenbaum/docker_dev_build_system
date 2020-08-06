@@ -9,7 +9,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='ddbs',
-    version='0.0.2',
+    version='0.0.5',
     author='Zachary A. Tanenbaum',
     author_email='ZachTanenbaum+docker_dev_build_system@gmail.com',
     description='A package for injecting a development env into a docker compose project.',
@@ -24,9 +24,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
-    entry_points={
-        'console_scripts': [
-            'ddbs = docker_dev.__main__:main',
-        ]
-    },
+    install_requires=[
+        'pyyaml'
+    ]
 )
