@@ -1,9 +1,5 @@
 stdin_open: true
 tty: true
-ports:
-  - "5000:5000"
-links:
-  - redis_db
 # Used to setup git
 environment:
   - GIT_USER_EMAIL
